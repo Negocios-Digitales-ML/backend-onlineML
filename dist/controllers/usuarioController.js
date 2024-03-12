@@ -13,6 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.usuarioController = void 0;
+const validator_1 = __importDefault(require("validator"));
 const usuarioModelo_1 = __importDefault(require("../models/usuarioModelo"));
 const utils_1 = require("../utils/utils");
 class UsuarioController {
@@ -29,16 +30,23 @@ class UsuarioController {
     add(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const usuario = req.body; // Suponiendo que el usuario se envía en el cuerpo de la solicitud
-                const existeUsuario = yield usuarioModelo_1.default.getByEmail(usuario.email); // Llama al método estático getByEmail
+                const usuario = req.body;
+                if (!usuario.email || !usuario.password) {
+                    return res.status(400).json({ message: "Por favor, ingresa correo electrónico y contraseña", code: 1 });
+                }
+                if (!validator_1.default.isEmail(usuario.email)) {
+                    return res.status(400).json({ message: "El correo electrónico proporcionado no es válido", code: 1 });
+                }
+                if (!validator_1.default.isLength(usuario.password, { min: 6 })) {
+                    return res.status(400).json({ message: "La contraseña debe tener al menos 6 caracteres", code: 1 });
+                }
+                const existeUsuario = yield usuarioModelo_1.default.getByEmail(usuario.email);
                 if (existeUsuario) {
                     return res.status(400).json({ message: "Ya existe un usuario con el mismo correo electrónico", code: 1 });
                 }
                 else {
-                    // Encriptar la contraseña antes de agregar el usuario
                     const encryptedText = yield utils_1.utils.hashPassword(usuario.password);
                     usuario.password = encryptedText;
-                    // Agregar usuario si no existe
                     const result = yield usuarioModelo_1.default.add(usuario);
                     return res.json({ message: "Usuario agregado correctamente", code: 0 });
                 }
@@ -51,7 +59,7 @@ class UsuarioController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const usuario = req.body; // Suponiendo que los datos del usuario a actualizar se envían en el cuerpo de la solicitud
+                const usuario = req.body;
                 const existeUsuario = yield usuarioModelo_1.default.getByEmail(usuario.email); // Verifica si el usuario existe
                 if (!existeUsuario) {
                     return res.status(404).json({ message: "Usuario no encontrado", code: 1 });
