@@ -12,6 +12,8 @@ git clone https://github.com/Negocios-Digitales-ML/backend-onlineML.git
 
 ### Configuración de la Base de Datos
 
+### NOTA: LA BASE DE DATOS ACTIVALA EN EL PUERTO 3308
+
 Antes de ejecutar el proyecto, asegúrate de crear la base de datos y la tabla necesaria en la base de datos de tu preferencia:
 
 ```sql
