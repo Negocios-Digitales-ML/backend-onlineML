@@ -9,13 +9,7 @@ Puedes clonar este repositorio utilizando el siguiente comando en tu terminal:
 ```bash
 git clone https://github.com/Negocios-Digitales-ML/backend-onlineML.git
 
-# Creación de BackEnd
-## Instrucciones
-Clonar repositorio
-```
-git clone https://github.com/NegociosDigitalesGEVN/Backend-ozvs.git
-```
-## Creación de la base de datos
+# Creación de la base de datos
 Crear una base de datos en MySql llamada apliweb
 ```
 create database apliweb;
