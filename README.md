@@ -12,7 +12,7 @@ git clone https://github.com/Negocios-Digitales-ML/backend-onlineML.git
 
 ### Configuración de la Base de Datos
 
-Antes de ejecutar el proyecto, asegúrate de crear la base de datos y la tabla necesaria en MySQL:
+Antes de ejecutar el proyecto, asegúrate de crear la base de datos y la tabla necesaria en la base de datos de tu preferencia:
 
 ```sql
 CREATE DATABASE apliweb;
