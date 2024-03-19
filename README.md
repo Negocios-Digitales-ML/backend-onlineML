@@ -1,6 +1,6 @@
 # Backend Miguel Luna
 
-Este es un proyecto escolar para la materia de Negocios Digitales
+Este es un proyecto escolar para la materia de Negocios Digitales.
 
 ## Clonar el Repositorio
 
@@ -8,59 +8,69 @@ Puedes clonar este repositorio utilizando el siguiente comando en tu terminal:
 
 ```bash
 git clone https://github.com/Negocios-Digitales-ML/backend-onlineML.git
+```
 
-# Creación de la base de datos
-Crear una base de datos en MySql llamada apliweb
-```
-create database apliweb;
-```
-Crear una tabla llamada tbl_usuario
-```
-create table tbl_usuario (
-	email varchar(100) primary key,
-	password varchar(250) not null,
-	role varchar(20) not null
+### Configuración de la Base de Datos
+
+Antes de ejecutar el proyecto, asegúrate de crear la base de datos y la tabla necesaria en MySQL:
+
+```sql
+CREATE DATABASE apliweb;
+
+CREATE TABLE tbl_usuario (
+    email VARCHAR(100) PRIMARY KEY,
+    password VARCHAR(250) NOT NULL,
+    role VARCHAR(20) NOT NULL
 );
+
+INSERT INTO tbl_usuario(email, password, role) VALUES ('apliweb@gmail.com', '123456', 'admin');
 ```
-Insertar el usuario de acuerdo a los siguientes datos
-```
-insert into tbl_usuario(email, password, role) values ('apliweb@gmail.com', '123456','admin');
-```
+
 ## LOGIN
+
 ### URL
 ```
 http://localhost:3000
 ```
+
 ### POST
-```
+```json
 {
-"email": "apliweb@gmail.com",
-"password": "123456"
+    "email": "apliweb@gmail.com",
+    "password": "123456"
 }
 ```
+
 ## Peticiones
+
 ### URL
 ```
 http://localhost:3000/usuario
 ```
+
 ### POST
-```
+```json
 {
-    "email":"apli@gmail.com",
-    "password":"123456",
-    "role":"admin"
+    "email": "apli@gmail.com",
+    "password": "123456",
+    "role": "admin"
 }
 ```
+
 ### PUT
-```
+```json
 {
-"email":"apli@gmail.com",
-    "password":"admin"
+    "email": "apli@gmail.com",
+    "password": "admin"
 }
 ```
-### Delete
-```
+
+### DELETE
+```json
 {
-    "email":"apli@gmail.com"
+    "email": "apli@gmail.com"
 }
 ```
+
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con el equipo mantenedor del proyecto a través de [correo electrónico](mailto:correo@example.com) o [creando un issue](https://github.com/Negocios-Digitales-ML/backend-onlineML/issues).
+
