@@ -53,7 +53,7 @@ http://localhost:3000/usuario
 ### POST
 ```json
 {
-    "email": "apli@gmail.com",
+    "email": "apliweb@gmail.com",
     "password": "123456",
     "role": "admin"
 }
@@ -62,7 +62,7 @@ http://localhost:3000/usuario
 ### PUT
 ```json
 {
-    "email": "apli@gmail.com",
+    "email": "apliweb@gmail.com",
     "password": "admin"
 }
 ```
@@ -70,7 +70,7 @@ http://localhost:3000/usuario
 ### DELETE
 ```json
 {
-    "email": "apli@gmail.com"
+    "email": "apliweb@gmail.com"
 }
 ```
 
