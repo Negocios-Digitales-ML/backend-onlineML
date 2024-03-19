@@ -72,5 +72,5 @@ http://localhost:3000/usuario
 }
 ```
 
-Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con el equipo mantenedor del proyecto a través de [correo electrónico](mailto:correo@example.com) o [creando un issue](https://github.com/Negocios-Digitales-ML/backend-onlineML/issues).
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto con el equipo mantenedor del proyecto a través de [correo electrónico](mailto:garraymiguel@gmail.com) 
 
